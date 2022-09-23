@@ -89,7 +89,7 @@
                 <!--<div v-for="(disk,i) in filteredGenres" :key="i" class="col">-->
                 <div class="card">
                 <div class="card-body">
-                    <img class="card-img-top poster" :src="<?php $disk['poster'] ?>" alt="Card image cap">
+                    <img class="card-img-top poster" src="<?php echo $disk['poster'] ?>" alt="Card image cap">
                     <h5 class="card-title mt-3"><?php echo $disk['title']; ?></h5>
                     <p style="color:grey"><?php echo $disk['author']; ?></p>
                     <p style="color:grey"><?php echo $disk['year']; ?></p>
