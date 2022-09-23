@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
@@ -73,5 +74,64 @@
         ];
 
     ?>
+    <div class="navContainer">
+    <nav class="navbarStyle navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="../assets/spotify.png" width="30" height="30" alt="">
+      </a>
+    </nav>
+    </div>
+    <main>
+        <div class="mainComponent">
+        <div class="container mt-5">
+            <div class="row gy-5 mx-auto">
+                <?php foreach ($disks as $disk){ ?>
+                <!--<div v-for="(disk,i) in filteredGenres" :key="i" class="col">-->
+                <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top poster" :src="<?php $disk['poster'] ?>" alt="Card image cap">
+                    <h5 class="card-title mt-3"><?php echo $disk['title']; ?></h5>
+                    <p style="color:grey"><?php echo $disk['author']; ?></p>
+                    <p style="color:grey"><?php echo $disk['year']; ?></p>
+                </div>
+                </div>
+                <?php } ?>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <style>
+    /*navbar*/
+    .navbarStyle{
+        background-color: #2e3a46;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+        <?php include '../style.css'; ?>
+
+    /*cards*/
+    .card{
+      background-color: #2e3a46;
+      width: 194px;
+      height: 364px;
+      text-align: center;
+    }
+    .poster{
+      width: 160px;
+      height: 160px;
+    }
+    .card-title{
+      max-width: 160px;
+      color: white;
+    }
+
+    /*main*/
+    .mainComponent{
+      background-color: #1e2d3b;
+    }
+    </style>
 </body>
 </html>
